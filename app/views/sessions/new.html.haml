@@ -1,0 +1,15 @@
+%h1
+  Log In
+
+= form_for @session, url: '/login' do |f|
+
+  = render partial: "shared/model_errors", locals: {model: @session}
+
+  %div
+    = f.label :email
+    = f.email_field :email
+  %div
+    = f.label :password
+    = f.password_field :password
+  %div
+    = f.submit "Login"

@@ -1,0 +1,24 @@
+%h1
+  Sign Up
+
+= form_for @sign_up, url: "/users" do |f|
+  = render partial: "shared/model_errors", locals: {model: @sign_up}
+
+  %div
+    = f.label :email
+    = f.email_field :email
+
+  %div
+    = f.label :password
+    = f.password_field :password
+
+  %div
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+
+  %div
+    = f.label :name
+    = f.text_field :name
+
+  %div
+    = f.submit "Sign Up"
